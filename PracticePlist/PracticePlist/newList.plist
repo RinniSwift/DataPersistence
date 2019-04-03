@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>prefferedNumber</key>
+	<integer>22</integer>
+	<key>welcomeMessage</key>
+	<string>&quot;Hello&quot;</string>
+	<key>firstTime</key>
+	<true/>
+	<key>Scores</key>
+	<array>
+		<dict>
+			<key>score</key>
+			<string>2</string>
+			<key>name</key>
+			<string>Michael</string>
+		</dict>
+		<dict>
+			<key>score</key>
+			<string>4</string>
+			<key>name</key>
+			<string>Pam</string>
+		</dict>
+		<dict>
+			<key>score</key>
+			<string>8</string>
+			<key>name</key>
+			<string>Jim</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>DWight</string>
+			<key>score</key>
+			<string>9</string>
+		</dict>
+	</array>
+</dict>
+</plist>
