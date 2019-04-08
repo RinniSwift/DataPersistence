@@ -33,6 +33,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.delegate = self
         tableView.dataSource = self
         
+        Defaults.saveToken("something")
+        print(Defaults.getToken())
+        Defaults.clearUserData()
+        print(Defaults.getToken())
     }
 
 }
