@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A406EF2B225C06080097E809 /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = A406EF2A225C06080097E809 /* Defaults.swift */; };
 		A47620B12255747A009B24C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47620B02255747A009B24C8 /* AppDelegate.swift */; };
 		A47620B32255747A009B24C8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47620B22255747A009B24C8 /* ViewController.swift */; };
 		A47620B62255747A009B24C8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A47620B42255747A009B24C8 /* Main.storyboard */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A406EF2A225C06080097E809 /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
 		A47620AD2255747A009B24C8 /* PracticePlist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PracticePlist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A47620B02255747A009B24C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A47620B22255747A009B24C8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -41,9 +43,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A406EF29225C05F50097E809 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				A406EF2A225C06080097E809 /* Defaults.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		A47620A42255747A009B24C8 = {
 			isa = PBXGroup;
 			children = (
+				A406EF29225C05F50097E809 /* Helper */,
 				A47620AF2255747A009B24C8 /* PracticePlist */,
 				A47620AE2255747A009B24C8 /* Products */,
 			);
@@ -146,6 +157,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A47620B32255747A009B24C8 /* ViewController.swift in Sources */,
+				A406EF2B225C06080097E809 /* Defaults.swift in Sources */,
 				A4C1FA2F2255790C00B36F91 /* PlistHelper.swift in Sources */,
 				A47620B12255747A009B24C8 /* AppDelegate.swift in Sources */,
 				A4C1FA3122557B9200B36F91 /* DataTableViewCell.swift in Sources */,

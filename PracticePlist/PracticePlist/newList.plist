@@ -11,6 +11,12 @@
 	<key>Scores</key>
 	<array>
 		<dict>
+			<key>name</key>
+			<string>Rinni</string>
+			<key>score</key>
+			<string>2</string>
+		</dict>
+		<dict>
 			<key>score</key>
 			<string>2</string>
 			<key>name</key>
