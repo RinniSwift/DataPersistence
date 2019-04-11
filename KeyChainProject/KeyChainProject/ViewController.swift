@@ -12,7 +12,7 @@ import KeychainSwift
 class ViewController: UIViewController {
     
     // MARK: - Variables
-    var keychain = KeychainSwift()
+    var keychain = Keychain()
     let messageKey = "save message"
     var textSaved: String? = nil {
         didSet {
@@ -33,14 +33,13 @@ class ViewController: UIViewController {
     
     // MARK: - Actions
     @IBAction func saveButtonTapped(_ sender: UIButton) {
-        keychain.synchronizable = willSyncSwitch.isOn
-        keychain.set(messageTextField.text!, forKey: messageKey)
-        textSaved = keychain.get(messageKey)
+        keychain.setString(item: messageTextField.text!, key: messageKey, synced: willSyncSwitch.isOn)
+        textSaved = keychain.getString(forKey: messageKey)
     }
     
     @IBAction func deleteButtonTapped(_ sender: UIButton) {
-        keychain.delete(messageKey)
-        textSaved = ""  // or -> set the textField directly to be empty
+        keychain.delete(forKey: messageKey)
+        textSaved = ""
         messageTextField.text = ""
         
     }
