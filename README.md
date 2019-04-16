@@ -31,3 +31,11 @@ Used KeychainSwift library to implement helper functions to retrieve and save da
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NSKeyedArchiver (encode objects and store data) saves data\
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NSKeyedUnarchiver (decode data from a file and decodes it into objects) retrieves data
 1. [insert project link](https://github.com/RinniSwift/DataPersistence)
+
+## FileSystem
+*file system handles the persistent storage of data files, apps, and the files associated with the operating system itself. Therefore, the file system is one of the fundamental resources used by all processes*\
+*At installation of an app, it creates a sandbox directory, each directory containing container directories. There are mostly 3 containers:*\
+*The bundle container directory: holds the app bundle, app information*\
+*The data container directory: divides into further sub directories:*\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*Documents, Temporary, Library, Library cache Directories*\
+*The iCloud container directory*\
