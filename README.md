@@ -62,8 +62,8 @@ Core data provides a layer of abstraction on top of the database (SQLite) that p
 | NSPersistentContainer: |
 |:----------------------------------------------|
 | formulates the following                      |
-|* creates new object model from our data model |
-|* creates persistent store coordinator object  |
-|* sets up url pointer of where the data is in the database|
-|* loads database into the persistent store coordinator |
-|* creates a managed object context and points it to the persistent store coordinator|
+|1. creates new object model from our data model |
+|2. creates persistent store coordinator object  |
+|3. sets up url pointer of where the data is in the database|
+|4. loads database into the persistent store coordinator |
+|5. creates a managed object context and points it to the persistent store coordinator|
