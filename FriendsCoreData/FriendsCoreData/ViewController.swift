@@ -56,5 +56,14 @@ extension ViewController: UITableViewDataSource {
         cell.friendNameLabel.text = names[indexPath.row].value(forKey: "name") as? String
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let friendObject = names[indexPath.row]
+            CoreDataHelper.delete(object: friendObject)
+            names.remove(at: indexPath.row)
+            tableview.reloadData()
+        }
+    }
 }
 

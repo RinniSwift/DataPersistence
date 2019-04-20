@@ -49,4 +49,9 @@ struct CoreDataHelper {
         }
     }
     
+    static func delete(object: Friend) {
+        context.delete(object)
+        saveContext()
+    }
+    
 }
