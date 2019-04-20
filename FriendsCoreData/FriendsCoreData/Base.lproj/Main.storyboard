@@ -30,9 +30,9 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d2S-8w-rYa">
-                                                    <rect key="frame" x="35" y="32.333333333333336" width="359" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <rect key="frame" x="35" y="30" width="359" height="26"/>
+                                                    <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="19"/>
+                                                    <color key="textColor" red="0.41719601299999998" green="0.4147562702" blue="0.4196357557" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -59,7 +59,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Friends" id="NUT-Xb-i8I">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Kw3-5H-Kdx"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Kw3-5H-Kdx">
+                            <connections>
+                                <action selector="addFriendButtonTapped:" destination="BYZ-38-t0r" id="MTR-vg-t9e"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableview" destination="Zlf-UW-Nso" id="xOP-Uh-xZY"/>

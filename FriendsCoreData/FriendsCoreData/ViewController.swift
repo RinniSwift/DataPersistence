@@ -9,19 +9,36 @@
 import UIKit
 
 class ViewController: UIViewController {
-
-    // MARK: - Outlets
-    @IBOutlet weak var tableview: UITableView!
     
     // MARK: - Variables
     var names: [String] = []
+
+    // MARK: - Outlets
+    @IBOutlet weak var tableview: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableview.dataSource = self
     }
-
+    
+    // MARK: - Actions
+    @IBAction func addFriendButtonTapped(_ sender: UIBarButtonItem) {
+        let alert = UIAlertController(title: "New Friend", message: "Add a name of your close friend!", preferredStyle: .alert)
+        let saveAction = UIAlertAction(title: "Add", style: .default) { [unowned self] action in
+            guard let name = alert.textFields?.first?.text else { return }
+            self.names.append(name)
+            self.tableview.reloadData()
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+        
+        alert.addTextField { (textField) in
+            textField.placeholder = "Rinni Swift"
+        }
+        alert.addAction(saveAction)
+        alert.addAction(cancelAction)
+        present(alert, animated: true)
+    }
 }
 
 extension ViewController: UITableViewDataSource {
@@ -32,6 +49,7 @@ extension ViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "friendCell") as! FriendTableViewCell
+        cell.friendNameLabel.text = names[indexPath.row]
         return cell
     }
     
