@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		91188D04669A54B2E6A99F7B /* Pods_KeyChainProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CE4A0409D3D3CBD45EC9FBC /* Pods_KeyChainProject.framework */; };
+		A4426A0C225ED1B7008E6A28 /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4426A0B225ED1B7008E6A28 /* KeychainHelper.swift */; };
 		A4C47716225EAF54000FFC6A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C47715225EAF54000FFC6A /* AppDelegate.swift */; };
 		A4C47718225EAF54000FFC6A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C47717225EAF54000FFC6A /* ViewController.swift */; };
 		A4C4771B225EAF54000FFC6A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4C47719225EAF54000FFC6A /* Main.storyboard */; };
@@ -18,6 +19,7 @@
 /* Begin PBXFileReference section */
 		0CE4A0409D3D3CBD45EC9FBC /* Pods_KeyChainProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KeyChainProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E7A6576BA33046E2E8A440B /* Pods-KeyChainProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KeyChainProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KeyChainProject/Pods-KeyChainProject.debug.xcconfig"; sourceTree = "<group>"; };
+		A4426A0B225ED1B7008E6A28 /* KeychainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelper.swift; sourceTree = "<group>"; };
 		A4C47712225EAF54000FFC6A /* KeyChainProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KeyChainProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4C47715225EAF54000FFC6A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A4C47717225EAF54000FFC6A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -49,9 +51,18 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		A4A83135225EEF66006F6101 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				A4426A0B225ED1B7008E6A28 /* KeychainHelper.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		A4C47709225EAF54000FFC6A = {
 			isa = PBXGroup;
 			children = (
+				A4A83135225EEF66006F6101 /* Helper */,
 				A4C47714225EAF54000FFC6A /* KeyChainProject */,
 				A4C47713225EAF54000FFC6A /* Products */,
 				40F5E633BA494F7F0A9BAC21 /* Pods */,
@@ -201,6 +212,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A4C47718225EAF54000FFC6A /* ViewController.swift in Sources */,
+				A4426A0C225ED1B7008E6A28 /* KeychainHelper.swift in Sources */,
 				A4C47716225EAF54000FFC6A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
