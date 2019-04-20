@@ -27,7 +27,7 @@ Used KeychainSwift library to implement helper functions to retrieve and save da
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4. open the workspace and start using the helper functions by 'import KeychainSwift' in the file.
 
 ## NSCoding
-*similar to Codable. persisting data to a disk. Depends on Foundation and is used in UIKit and Foundation.*
+*similar to Codable. persisting data to a disk. Depends on Foundation an is used in UIKit and Foundation.*
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NSKeyedArchiver (encode objects and store data) saves data\
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NSKeyedUnarchiver (decode data from a file and decodes it into objects) retrieves data
 1. [insert project link](https://github.com/RinniSwift/DataPersistence)
@@ -38,4 +38,32 @@ Used KeychainSwift library to implement helper functions to retrieve and save da
 *The bundle container directory: holds the app bundle, app information*\
 *The data container directory: divides into further sub directories:*\
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*Documents, Temporary, Library, Library cache Directories*\
-*The iCloud container directory*\
+*The iCloud container directory*
+
+## Core Data
+Core data is a framework that allows storing and retrieving data from a database in an object oriented way. Core data allows easy to access to map objects in your apps to the data base without knowing SQL. This object-oriented application contains interrelated objects where objects are linked to each other by owning, containing, or holding a reference to another object. This web of objects is called an **object graph** -- an abstract structure that can be used to describe an applications state at a particular point in time.\
+Core data provides a layer of abstraction on top of the database (SQLite) that provides a convenient API for mainting the relationships between records stored in the database. And in the context of apple's *MVC*, Core data fits in the '*M*' acting as the model as it manages the entire database.
+
+#### Components
+* NSManagedObjectModel
+* NSManagedObjectContext
+* NSPersistentStoreCoordinator
+* NSManagedObject **:** Defines the data Each entity is an NSManagedObject which contains attributes for each
+* NSPersistentContainer **:** Deals with the boilerplate code. Sets up all the contents to use core data.
+* NSPersistentStore **:** Connected with the persistent store coordinator Used to declare what format to persist data in: *SQLite*, *Atomic*, *XML*, *In-memory*
+
+
+**Star components in the Core Data stack are**
+
+| managed object model  | managed object context  | persistent store coordinator |
+| --------------------- |:-----------------------:| :---------------------------:|
+| One single instance within the application, represents the data model | The scratchboard when accessing data, manages a collection of NSManagedObjects| The heart of the core data stack. It is accessed and interacted by the managed object context. Responsible for reading from and writing to the disk|
+
+| NSPersistentContainer: |
+|:----------------------------------------------|
+| formulates the following                      |
+|* creates new object model from our data model |
+|* creates persistent store coordinator object  |
+|* sets up url pointer of where the data is in the database|
+|* loads database into the persistent store coordinator |
+|* creates a managed object context and points it to the persistent store coordinator|
