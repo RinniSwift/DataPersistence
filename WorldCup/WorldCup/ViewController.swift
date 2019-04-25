@@ -59,7 +59,7 @@ class ViewController: UIViewController {
   // MARK: - View Life Cycle
   override func viewDidLoad() {
     super.viewDidLoad()
-    
+    fetchedResultController.delegate = self
     do {
       try fetchedResultController.performFetch()
     } catch {
@@ -120,7 +120,7 @@ extension ViewController: UITableViewDataSource {
     let team = fetchedResultController.object(at: indexPath)
     team.wins = team.wins + 1
     coreDataStack.saveContext()
-    tableView.reloadData()
+//    tableView.reloadData()
   }
 }
 
@@ -128,5 +128,11 @@ extension ViewController: UITableViewDataSource {
 extension ViewController: UITableViewDelegate {
 
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+  }
+}
+
+extension ViewController: NSFetchedResultsControllerDelegate {
+  func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+    tableView.reloadData()
   }
 }
