@@ -35,23 +35,20 @@ class ViewController: UIViewController {
   fileprivate let teamCellIdentifier = "teamCellReuseIdentifier"
   var coreDataStack: CoreDataStack!
   
-  // prperty that holds fetched requests
+  // property that holds fetched requests
   lazy var fetchedResultController: NSFetchedResultsController<Team> = {
     
     let sortZone = NSSortDescriptor(key: "qualifyingZone", ascending: true)
+    let sortWins = NSSortDescriptor(key: "wins", ascending: false)
     
     let fetchRequest: NSFetchRequest<Team> = Team.fetchRequest()
-    fetchRequest.sortDescriptors = [sortZone]
-//
+    fetchRequest.sortDescriptors = [sortZone, sortWins]
+
     let fetchedResultsController = NSFetchedResultsController(
       fetchRequest: fetchRequest,
       managedObjectContext: coreDataStack.managedContext,
       sectionNameKeyPath: #keyPath(Team.qualifyingZone),
       cacheName: nil)
-    
-    
-    
-    
     return fetchedResultsController
   }()
 
