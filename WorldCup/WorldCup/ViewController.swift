@@ -98,7 +98,6 @@ extension ViewController: UITableViewDataSource {
   }
   
   func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-    print(fetchedResultController.sections?[section].name)
     return fetchedResultController.sections?[section].name
   }
 
@@ -132,7 +131,28 @@ extension ViewController: UITableViewDelegate {
 }
 
 extension ViewController: NSFetchedResultsControllerDelegate {
+  
+  func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+    tableView.beginUpdates()
+  }
+  
+  func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+    
+    switch type {
+    case .insert:
+      tableView.insertRows(at: [newIndexPath!], with: .automatic)
+    case .delete:
+      tableView.deleteRows(at: [indexPath!], with: .automatic)
+    case .update:
+      let cell = tableView.cellForRow(at: indexPath!) as! TeamCell
+      configure(cell: cell, for: indexPath!)
+    case .move:
+      tableView.deleteRows(at: [indexPath!], with: .automatic)
+      tableView.insertRows(at: [newIndexPath!], with: .automatic)
+    }
+  }
+  
   func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-    tableView.reloadData()
+    tableView.endUpdates()
   }
 }
