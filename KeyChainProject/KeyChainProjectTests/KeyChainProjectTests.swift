@@ -44,8 +44,8 @@ class KeyChainProjectTests: XCTestCase {
     
     func testKeychainDelete() {
         // Given an item name
-        // When saving a string to keychain
-        // Assert the returned value is equal to the item name
+        // When deleting the item at that key
+        // Assert the returned value is nil
         
         let keychain = Keychain()
         keychain.setString(item: "Rinni", key: "Name")
@@ -54,6 +54,10 @@ class KeyChainProjectTests: XCTestCase {
     }
     
     func testKeychainUpdate() {
+        // Given an item name
+        // When updating the item name
+        // Assert the returned value is updated
+        
         let keychain = Keychain()
         keychain.setString(item: "Rinni", key: "Name")
         keychain.setString(item: "Hello", key: "Name")
