@@ -12,7 +12,7 @@ import CoreData
 class ViewController: UIViewController {
     
     // MARK: - Variables
-    var managedContext = NSManagedObjectContext()
+    var managedContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
     var mainPlant: Plant?
 
     @IBOutlet weak var tableView: UITableView!
@@ -49,7 +49,6 @@ class ViewController: UIViewController {
         } catch let error as NSError {
             print("Error: \(error) description: \(error.userInfo)")
         }
-
     }
 
     @IBAction func addLog(_ sender: Any) {
@@ -58,7 +57,6 @@ class ViewController: UIViewController {
         waterDate.date = NSDate()
         
         //add it to the Plant's dates set
-        
         if let plant = mainPlant, let dates = plant.waterDates?.mutableCopy() as? NSMutableOrderedSet {
             dates.add(waterDate)
             mainPlant?.waterDates = dates
@@ -85,8 +83,7 @@ extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let waterDate = mainPlant?.waterDates![indexPath.row] as! WaterDate
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        cell.textLabel?.text = dateFormatter.string(from: waterDate.date as! Date)
-        
+        cell.textLabel?.text = dateFormatter.string(from: waterDate.date! as Date)
         return cell
     }
     
