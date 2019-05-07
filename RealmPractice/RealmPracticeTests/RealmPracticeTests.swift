@@ -60,7 +60,6 @@ class RealmPracticeTests: XCTestCase {
             try bookStore.updateBooks("author", currentValue: "William", updatedValue: "William Shakespeare")
             
             //Then we find it again and make sure the author's name matches the new value
-            let predicate = NSPredicate(format: "title = %@", "Hemlet")
             let books = bookStore.findBooksByTitle("Hemlet")
             
             XCTAssertEqual(books.first!.author, "William Shakespeare")
@@ -77,6 +76,28 @@ class RealmPracticeTests: XCTestCase {
     
     func testDelete() {
         
+        do {
+            let title = "The Tree House"
+            let name = "Rainbows"
+            let year = 1999
+            
+            // create the book and save to realm
+            let book = bookStore.createBook(title, author: name, year: year)
+            bookStore.saveBook(book)
+            
+            do {
+                try bookStore.deleteBook(book)
+            } catch {
+                XCTAssert(false, "Unexpected error \(error)")
+            }
+
+            // find and assert it to equal 0 books found
+            let books = bookStore.findBooksByTitle(title)
+            XCTAssertEqual(books.count, 0)
+            
+        } catch RuntimeError.NoRealmSet {
+            XCTAssert(false, "No realm database was set")
+        }
        
     }
     
